@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # quotation_app
 
 A new Flutter project.
@@ -14,3 +15,6 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+=======
+# quotation
+>>>>>>> 37e4d14930dad4c74623e3faf8738381bd48a57c
