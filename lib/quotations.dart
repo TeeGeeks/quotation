@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:quotation_app/base_url.dart';
 import 'package:quotation_app/get_price.dart';
@@ -156,6 +157,8 @@ class _AllQuotationScreenState extends State<AllQuotationScreen> {
     }
   }
 
+  DateFormat dateFormat = DateFormat("yyyy-MM-dd");
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -208,13 +211,20 @@ class _AllQuotationScreenState extends State<AllQuotationScreen> {
                     ),
                     child: ListTile(
                       contentPadding: const EdgeInsets.all(16),
-                      leading: const Text(
-                        'Check Quotation',
-                        style: TextStyle(
-                          color: Colors.blue,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16,
-                        ),
+                      leading: Column(
+                        children: [
+                          Text(
+                            'Check Quotation',
+                            style: TextStyle(
+                              color: Colors.blue,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                            ),
+                          ),
+                          Text(
+                            'Date: ${quotation.date != null ? dateFormat.format(quotation.date!) : ''}',
+                          )
+                        ],
                       ),
                       title: Text(
                         '${quotation.productName ?? ''}: ${quotation.productTitle ?? ''}',

@@ -159,9 +159,12 @@ class QuotationCalculator {
     String? sizeOfPaper = quotationData['Size of Paper']?.toString();
     int numberOfPages = quotationData['Number of Pages'] ?? 0;
 
+    int numberOfPagesForPaper = numberOfPages - 4;
+
     // Calculate the number of sheets based on paper size and number of pages
     double numberOfSheets =
-        _calculateNumberOfSheets(sizeOfPaper, numberOfPages);
+        _calculateNumberOfSheets(sizeOfPaper, numberOfPagesForPaper);
+
     int numberOfCopies = quotationData['Number of Copies'] ?? 0;
 
     // Calculate the price per sheet for paper and cover grammage
@@ -170,7 +173,8 @@ class QuotationCalculator {
 
     double priceOfCoverGrammage = coverGrammagePrice / 100;
     int noOfCoverUsed = 4 * numberOfCopies;
-    double priceSheetOfCoverGrammage = noOfCoverUsed / 16;
+    int numberOfSheetsForCover = _calculateNumberOfSheetsOfCover(sizeOfPaper);
+    double priceSheetOfCoverGrammage = noOfCoverUsed / numberOfSheetsForCover;
     double pricePerSheetOfCoverGrammage =
         (priceSheetOfCoverGrammage * priceOfCoverGrammage) / numberOfCopies;
 
@@ -295,6 +299,29 @@ class QuotationCalculator {
     } else if (sizeOfPaper == "2.05 x 2.91") {
       divisor = 48;
     }
-    return ((numberOfPages - 4) / divisor);
+    return (numberOfPages / divisor);
+  }
+
+  static int _calculateNumberOfSheetsOfCover(String? sizeOfPaper) {
+    int divisor = 0;
+
+    if (sizeOfPaper == "9 x 6") {
+      divisor = 16;
+    } else if (sizeOfPaper == "8.5 x 11") {
+      divisor = 8;
+    } else if (sizeOfPaper == "4 x 6") {
+      divisor = 24;
+    } else if (sizeOfPaper == "8.27 x 10.5") {
+      divisor = 8;
+    } else if (sizeOfPaper == "5.83 x 8.27") {
+      divisor = 16;
+    } else if (sizeOfPaper == "4.13 x 5.83") {
+      divisor = 24;
+    } else if (sizeOfPaper == "2.91 x 4.13") {
+      divisor = 32;
+    } else if (sizeOfPaper == "2.05 x 2.91") {
+      divisor = 48;
+    }
+    return divisor;
   }
 }
