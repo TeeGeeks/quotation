@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:quotation_app/base_url.dart';
 import 'dart:convert';
@@ -62,6 +63,8 @@ class _DeleteScreenState extends State<DeleteScreen> {
       throw Exception('Failed to delete quotation');
     }
   }
+
+  DateFormat dateFormat = DateFormat("yyyy-MM-dd");
 
   @override
   Widget build(BuildContext context) {
@@ -158,9 +161,10 @@ class _DeleteScreenState extends State<DeleteScreen> {
                         margin: const EdgeInsets.symmetric(
                             vertical: 5.0, horizontal: 10.0),
                         child: ListTile(
-                          title: Text(quotation.productName ?? ''),
+                          title: Text(
+                              '${quotation.productName}: ${quotation.productTitle}'),
                           subtitle: Text(
-                              'Quantity: ${quotation.numberOfCopies.toString()}'),
+                              'Quantity: ${quotation.numberOfCopies}: ${quotation.date != null ? dateFormat.format(quotation.date) : ''}'),
                           trailing: IconButton(
                             icon: const Icon(Icons.delete, color: Colors.red),
                             onPressed: () {

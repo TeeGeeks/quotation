@@ -251,7 +251,7 @@ class _AllQuotationScreenState extends State<AllQuotationScreen> {
                       contentPadding: const EdgeInsets.all(16),
                       leading: Column(
                         children: [
-                          Text(
+                          const Text(
                             'Check Quotation',
                             style: TextStyle(
                               color: Colors.blue,
@@ -265,7 +265,7 @@ class _AllQuotationScreenState extends State<AllQuotationScreen> {
                         ],
                       ),
                       title: Text(
-                        '${quotation.productName ?? ''}: ${quotation.productTitle ?? ''}',
+                        '${quotation.productName}: ${quotation.productTitle}',
                         style: const TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 18,

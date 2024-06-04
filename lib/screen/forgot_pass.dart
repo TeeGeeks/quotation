@@ -37,7 +37,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
 
     try {
       var response = await http.post(
-        Uri.parse(getBaseUrl('forgot_password')),
+        Uri.parse(getBaseUrl('forgot-password')),
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
         },

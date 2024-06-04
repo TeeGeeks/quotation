@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'dart:convert';
 
@@ -45,6 +46,8 @@ class _EditScreenState extends State<EditScreen> {
     }
   }
 
+  DateFormat dateFormat = DateFormat("yyyy-MM-dd");
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -73,12 +76,12 @@ class _EditScreenState extends State<EditScreen> {
               } else if (snapshot.hasError) {
                 return Center(child: Text('Error: ${snapshot.error}'));
               } else if (snapshot.data!.isEmpty) {
-                return Center(
+                return const Center(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Icon(Icons.info_outline, size: 48.0, color: Colors.grey),
-                      const SizedBox(height: 16.0),
+                      SizedBox(height: 16.0),
                       Text('No quotations available',
                           style: TextStyle(fontSize: 18.0, color: Colors.grey)),
                     ],
@@ -104,21 +107,38 @@ class _EditScreenState extends State<EditScreen> {
                             vertical: 5.0, horizontal: 10.0),
                         child: ListTile(
                           contentPadding: const EdgeInsets.all(16),
-                          leading: const Text(
-                            'Edit Quotation',
-                            style: TextStyle(
-                              color: Colors.blue,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16,
-                            ),
+                          leading: Column(
+                            children: [
+                              const Text(
+                                'Edit Quotation',
+                                style: TextStyle(
+                                  color: Colors.blue,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16,
+                                ),
+                              ),
+                              Text(
+                                'Date: ${quotation.date != null ? dateFormat.format(quotation.date) : ''}',
+                              )
+                            ],
                           ),
                           title: Text(
-                            quotation.productName ?? '',
-                            style: const TextStyle(fontSize: 18.0),
+                            '${quotation.productName}: ${quotation.productTitle}',
+                            style: const TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18,
+                            ),
                           ),
-                          subtitle: Text(
-                            'Quantity: ${quotation.numberOfCopies.toString()}',
-                            style: const TextStyle(fontSize: 16.0),
+                          subtitle: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const SizedBox(height: 8),
+                              Text(
+                                'Quantity: ${quotation.numberOfCopies.toString()}',
+                                style: const TextStyle(fontSize: 16),
+                              ),
+                              const SizedBox(height: 4),
+                            ],
                           ),
                           trailing: const Icon(Icons.edit, color: Colors.blue),
                         ),

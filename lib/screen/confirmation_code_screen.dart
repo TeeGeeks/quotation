@@ -42,7 +42,7 @@ class _ConfirmationCodePageState extends State<ConfirmationCodePage> {
     try {
       // Perform API request to verify the code
       var response = await http.post(
-        Uri.parse(getBaseUrl('verify_code')),
+        Uri.parse(getBaseUrl('verify-code')),
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
         },

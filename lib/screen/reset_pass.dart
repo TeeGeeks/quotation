@@ -36,8 +36,8 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
 
     try {
       var response = await http.post(
-        Uri.parse(getBaseUrl('reset_password')),
-        headers: <String, String>{
+        Uri.parse(getBaseUrl('reset-password')),
+         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
         },
         body: jsonEncode({
