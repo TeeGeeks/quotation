@@ -35,12 +35,10 @@ class _EditScreenState extends State<EditScreen> {
     );
     if (response.statusCode == 200) {
       final List<dynamic> data = json.decode(response.body);
-      final List<Quotation> userQuotations = data
-          .map((json) => Quotation.fromJson(json))
-          .where(
-              (quotation) => quotation.createdByUserId == userProvider.userId)
-          .toList();
-
+      final List<Quotation> userQuotations =
+          data.map((json) => Quotation.fromJson(json)).where((quotation) {
+        return quotation.userId == int.tryParse(userProvider.userId ?? '');
+      }).toList();
       return userQuotations;
     } else {
       throw Exception('Failed to fetch quotations');

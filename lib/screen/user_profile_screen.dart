@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:file_picker/file_picker.dart';
+import 'package:provider/provider.dart';
 import 'package:quotation_app/get_user.dart'; // Ensure this file contains the necessary UserApi implementation.
 import 'package:quotation_app/widgets/main_drawer.dart';
+import 'package:quotation_app/widgets/user_profile.dart';
 
 class UserProfileScreen extends StatefulWidget {
   final String userId;
@@ -41,7 +43,8 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
     });
 
     try {
-      User? user = await UserApi.getUser(widget.userId);
+      String? token = Provider.of<UserProvider>(context, listen: false).token;
+      User? user = await UserApi.getUser(widget.userId, token!);
       if (user != null) {
         _companyNameController.text = user.companyName;
         _companyAddressController.text = user.companyAddress;
@@ -94,8 +97,11 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
       });
 
       try {
+        String? userId =
+            Provider.of<UserProvider>(context, listen: false).userId;
+        String? token = Provider.of<UserProvider>(context, listen: false).token;
         await UserApi.updateUser(
-          userId: widget.userId,
+          userId: userId!,
           companyName: _companyNameController.text,
           companyAddress: _companyAddressController.text,
           companyWebsite: _companyWebsiteController.text,
@@ -103,6 +109,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
           phone: _phoneController.text,
           email: _emailController.text,
           filePath: _filePath ?? '', // Use the selected file path
+          token: token!, // Pass the authentication token
         );
 
         ScaffoldMessenger.of(context).showSnackBar(

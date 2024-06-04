@@ -72,7 +72,8 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
         // Navigate to the login page
         Navigator.pushReplacementNamed(context, '/');
       } catch (error) {
-        String errorMessage = 'Failed to create user';
+        String errorMessage =
+            'Failed to create user: Email or Username already exits';
         // if (error is ApiException) {
         //   errorMessage = error.message;
         // }
@@ -205,6 +206,8 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                       validator: (value) {
                         if (value == null || value.isEmpty) {
                           return 'Please enter a password';
+                        } else if (value.length <= 6) {
+                          return 'Password must be more than 6 characters long';
                         }
                         return null;
                       },

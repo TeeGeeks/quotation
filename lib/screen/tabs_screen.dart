@@ -31,13 +31,13 @@ class _TabsScreenState extends State<TabsScreen> {
     ];
   }
 
-// http://localhost:5000/uploads/file-1716300680886.jpg
-// http://192.168.137.210:5000/uploads/file-1716300680886.jpg
   Future<void> _fetchUserLogo() async {
     try {
       String? userId = Provider.of<UserProvider>(context, listen: false).userId;
+      String? token = Provider.of<UserProvider>(context, listen: false).token;
       if (userId != null) {
-        User? user = await UserApi.getUser(userId); // Fetch user details
+        User? user =
+            await UserApi.getUser(userId, token!); // Fetch user details
         if (user != null && user.logo.isNotEmpty) {
           setState(() {
             _userLogo = getBaseUrl(user.logo)

@@ -48,10 +48,10 @@ class _PriceSettingsState extends State<PriceSettings> {
 
   void populateFormFields(BuildContext context) async {
     try {
-      var url = Uri.parse(getBaseUrl("get_prices"));
       final userProvider = Provider.of<UserProvider>(context, listen: false);
       final token = userProvider.token;
 
+      var url = Uri.parse(getBaseUrl("get_prices"));
       var response = await http.get(
         url,
         headers: <String, String>{
@@ -75,7 +75,7 @@ class _PriceSettingsState extends State<PriceSettings> {
               'Failed to fetch prices: Unexpected response format', Colors.red);
         }
       } else {
-        _showSnackBar('Failed to fetch prices', Colors.red);
+        _showSnackBar('Failed to fetch prices, Price fields empty!', Colors.red);
       }
     } catch (e) {
       _showSnackBar('Failed to fetch prices', Colors.red);

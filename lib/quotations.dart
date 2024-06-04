@@ -11,54 +11,60 @@ import 'dart:convert';
 import './screen/quotation_details_screen.dart';
 
 class Quotation {
-  String? id;
-  String? productName;
-  String? productTitle;
-  String? sizeOfPaper;
-  String? paperColor;
-  int? grammageForPaper;
-  int? numberOfCopies;
-  String? numberOfCover;
-  int? grammageOfCard;
-  String? sizeOfCard;
-  int? designCost;
-  int? plateMakingCost;
-  int? runningCost;
-  int? editingCost;
-  int? impressionCost;
-  String? noOfColorsText;
-  int? numberOfPages;
-  List<String>? finishingCosts;
-  String? address;
-  DateTime? date;
-  String? createdByUserId;
+  final int id;
+  final int userId;
+  final String productName;
+  final String productTitle;
+  final String sizeOfPaper;
+  final String paperColor;
+  final int grammageForPaper;
+  final int numberOfCopies;
+  final String numberOfCover;
+  final int grammageOfCard;
+  final String sizeOfCard;
+  final int designCost;
+  final int plateMakingCost;
+  final int? runningCost;
+  final String noOfColorsText;
+  final int numberOfPages;
+  final List<String> finishingCosts;
+  final int? editingCost;
+  final int impressionCost;
+  final String address;
+  final DateTime date;
+  final DateTime createdAt;
+  final DateTime updatedAt;
 
-  Quotation(
-      {required this.id,
-      this.productName,
-      this.productTitle,
-      this.sizeOfPaper,
-      this.paperColor,
-      this.grammageForPaper,
-      this.numberOfCopies,
-      this.numberOfCover,
-      this.grammageOfCard,
-      this.sizeOfCard,
-      this.designCost,
-      this.plateMakingCost,
-      this.runningCost,
-      this.noOfColorsText,
-      this.numberOfPages,
-      this.finishingCosts,
-      this.address,
-      this.date,
-      this.createdByUserId,
-      this.editingCost,
-      this.impressionCost});
+  Quotation({
+    required this.id,
+    required this.userId,
+    required this.productName,
+    required this.productTitle,
+    required this.sizeOfPaper,
+    required this.paperColor,
+    required this.grammageForPaper,
+    required this.numberOfCopies,
+    required this.numberOfCover,
+    required this.grammageOfCard,
+    required this.sizeOfCard,
+    required this.designCost,
+    required this.plateMakingCost,
+    this.runningCost,
+    required this.noOfColorsText,
+    required this.numberOfPages,
+    required this.finishingCosts,
+    this.editingCost,
+    required this.impressionCost,
+    required this.address,
+    required this.date,
+    required this.createdAt,
+    required this.updatedAt,
+  });
 
   factory Quotation.fromJson(Map<String, dynamic> json) {
     return Quotation(
-      id: json['_id'] ?? '',
+      id: json['id'],
+      userId: json['userId'],
       productName: json['productName'],
       productTitle: json['productTitle'],
       sizeOfPaper: json['sizeOfPaper'],
@@ -71,20 +77,45 @@ class Quotation {
       designCost: json['designCost'],
       plateMakingCost: json['plateMakingCost'],
       runningCost: json['runningCost'],
-      editingCost: json['editingCost'],
-      impressionCost: json['impressionCost'],
       noOfColorsText: json['noOfColorsText'],
       numberOfPages: json['numberOfPages'],
-      finishingCosts: json['finishingCosts'] != null
-          ? List<String>.from(json['finishingCosts'])
-          : null,
+      finishingCosts: List<String>.from(json['finishingCosts']),
+      editingCost: json['editingCost'],
+      impressionCost: json['impressionCost'],
       address: json['address'],
-      date: json['date'] != null ? DateTime.parse(json['date']) : null,
-      createdByUserId: json['userId'],
+      date: DateTime.parse(json['date']),
+      createdAt: DateTime.parse(json['createdAt']),
+      updatedAt: DateTime.parse(json['updatedAt']),
     );
   }
 
-  // Object? toJson() {}
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'userId': userId,
+      'productName': productName,
+      'productTitle': productTitle,
+      'sizeOfPaper': sizeOfPaper,
+      'paperColor': paperColor,
+      'grammageForPaper': grammageForPaper,
+      'numberOfCopies': numberOfCopies,
+      'numberOfCover': numberOfCover,
+      'grammageOfCard': grammageOfCard,
+      'sizeOfCard': sizeOfCard,
+      'designCost': designCost,
+      'plateMakingCost': plateMakingCost,
+      'runningCost': runningCost,
+      'noOfColorsText': noOfColorsText,
+      'numberOfPages': numberOfPages,
+      'finishingCosts': finishingCosts,
+      'editingCost': editingCost,
+      'impressionCost': impressionCost,
+      'address': address,
+      'date': date.toIso8601String(),
+      'createdAt': createdAt.toIso8601String(),
+      'updatedAt': updatedAt.toIso8601String(),
+    };
+  }
 }
 
 class AllQuotationScreen extends StatefulWidget {
@@ -101,12 +132,16 @@ class _AllQuotationScreenState extends State<AllQuotationScreen> {
   @override
   void initState() {
     super.initState();
-    _quotations = fetchQuotations();
+    _fetchData();
+  }
+
+  void _fetchData() {
+    _quotations = fetchQuotations(context);
     _prices = PriceService.fetchPrices(context);
     _fetchUser();
   }
 
-  Future<List<Quotation>> fetchQuotations() async {
+  Future<List<Quotation>> fetchQuotations(BuildContext context) async {
     try {
       final userProvider = Provider.of<UserProvider>(context, listen: false);
       final token = userProvider.token;
@@ -120,11 +155,13 @@ class _AllQuotationScreenState extends State<AllQuotationScreen> {
 
       if (response.statusCode == 200) {
         final List<dynamic> data = json.decode(response.body);
-        final List<Quotation> userQuotations = data
-            .map((json) => Quotation.fromJson(json))
-            .where(
-                (quotation) => quotation.createdByUserId == userProvider.userId)
-            .toList();
+        final List<Quotation> userQuotations =
+            data.map((json) => Quotation.fromJson(json)).where((quotation) {
+          print('Quotation userId: ${quotation.userId}');
+          print(
+              'UserProvider userId: ${int.tryParse(userProvider.userId ?? '')}');
+          return quotation.userId == int.tryParse(userProvider.userId ?? '');
+        }).toList();
         print(userQuotations);
         return userQuotations;
       } else {
@@ -143,7 +180,8 @@ class _AllQuotationScreenState extends State<AllQuotationScreen> {
   Future<void> _fetchUser() async {
     try {
       String? userId = Provider.of<UserProvider>(context, listen: false).userId;
-      User? user = await UserApi.getUser(userId!); // Fetch user details
+      String? token = Provider.of<UserProvider>(context, listen: false).token;
+      User? user = await UserApi.getUser(userId!, token!); // Fetch user details
       if (user != null && user.logo.isNotEmpty) {
         setState(() {
           _user = user;
@@ -222,7 +260,7 @@ class _AllQuotationScreenState extends State<AllQuotationScreen> {
                             ),
                           ),
                           Text(
-                            'Date: ${quotation.date != null ? dateFormat.format(quotation.date!) : ''}',
+                            'Date: ${quotation.date != null ? dateFormat.format(quotation.date) : ''}',
                           )
                         ],
                       ),

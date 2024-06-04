@@ -17,6 +17,7 @@ class UserProvider with ChangeNotifier {
     _token = token;
     _userId = userId;
     notifyListeners();
+    print("userId: $_userId");
   }
 
   Future<void> loginWithGoogle() async {}

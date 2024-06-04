@@ -34,12 +34,10 @@ class _DeleteScreenState extends State<DeleteScreen> {
     );
     if (response.statusCode == 200) {
       final List<dynamic> data = json.decode(response.body);
-      final List<Quotation> userQuotations = data
-          .map((json) => Quotation.fromJson(json))
-          .where(
-              (quotation) => quotation.createdByUserId == userProvider.userId)
-          .toList();
-
+      final List<Quotation> userQuotations =
+          data.map((json) => Quotation.fromJson(json)).where((quotation) {
+        return quotation.userId == int.tryParse(userProvider.userId ?? '');
+      }).toList();
       return userQuotations;
     } else {
       throw Exception('Failed to fetch quotations');
@@ -143,7 +141,7 @@ class _DeleteScreenState extends State<DeleteScreen> {
                                 ),
                                 TextButton(
                                   onPressed: () {
-                                    deleteQuotation(quotation.id!);
+                                    deleteQuotation(quotation.id as String);
                                     Navigator.of(context).pop(true);
                                   },
                                   child: const Text('Delete'),
@@ -154,7 +152,7 @@ class _DeleteScreenState extends State<DeleteScreen> {
                         );
                       },
                       onDismissed: (direction) {
-                        deleteQuotation(quotation.id!);
+                        deleteQuotation(quotation.id as String);
                       },
                       child: Card(
                         margin: const EdgeInsets.symmetric(
@@ -181,7 +179,8 @@ class _DeleteScreenState extends State<DeleteScreen> {
                                     ),
                                     TextButton(
                                       onPressed: () {
-                                        deleteQuotation(quotation.id!);
+                                        deleteQuotation(
+                                            quotation.id.toString());
                                         Navigator.of(context).pop();
                                       },
                                       child: const Text('Delete'),
