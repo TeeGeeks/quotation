@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:quotation_app/dummy_data.dart';
-import 'package:quotation_app/model/product.dart';
-import 'package:quotation_app/widgets/main_drawer.dart';
-import 'package:quotation_app/widgets/product_item.dart';
+import '../dummy_data.dart';
+import '../model/product.dart';
+import '../widgets/main_drawer.dart';
+import '../widgets/product_item.dart';
 
 class ProductItemsScreen extends StatelessWidget {
   const ProductItemsScreen({Key? key}) : super(key: key);

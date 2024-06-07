@@ -3,8 +3,8 @@ import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
 import 'dart:convert';
 
-import 'package:quotation_app/base_url.dart';
-import 'package:quotation_app/widgets/user_profile.dart';
+import './base_url.dart';
+import './widgets/user_profile.dart';
 
 class PriceService {
   static Future<List<Price>> fetchPrices(BuildContext context) async {

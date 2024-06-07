@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:quotation_app/get_price.dart';
-import 'package:quotation_app/get_user.dart';
-import 'package:quotation_app/screen/pdf_screen.dart';
-import 'package:quotation_app/screen/quotation%20calculator.dart';
-import 'package:quotation_app/widgets/main_drawer.dart';
+import '../get_price.dart';
+import '../get_user.dart';
+import './pdf_screen.dart';
+import './quotation%20calculator.dart';
+import '../widgets/main_drawer.dart';
 
+// ignore: must_be_immutable
 class QuotationDetailsScreen extends StatelessWidget {
   final Map<String, dynamic> quotationData;
   final List<Price> prices;

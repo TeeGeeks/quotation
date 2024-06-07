@@ -4,8 +4,8 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:quotation_app/base_url.dart';
-import 'package:quotation_app/widgets/user_profile.dart';
+import '../base_url.dart';
+import '../widgets/user_profile.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
@@ -103,36 +103,62 @@ class _LoginPageState extends State<LoginPage> {
     }
   }
 
+  final GoogleSignIn _googleSignIn = GoogleSignIn(
+    clientId:
+        '1009598368430-ker8s09m8gs19sbtovq1om55h7nh9oi3.apps.googleusercontent.com',
+    scopes: ['email'],
+  );
+
   void _loginWithGoogle() async {
-    final GoogleSignIn googleSignIn = GoogleSignIn();
     try {
-      final GoogleSignInAccount? googleUser = await googleSignIn.signIn();
+      final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
       if (googleUser == null) {
+        // The user canceled the sign-in
         return;
       }
+
       final GoogleSignInAuthentication googleAuth =
           await googleUser.authentication;
       final String? idToken = googleAuth.idToken;
 
       final response = await http.post(
-        Uri.parse(getBaseUrl('googleSignIn')),
-        headers: {'Content-Type': 'application/json'},
-        body: json.encode({'googleIdToken': idToken}),
+        Uri.parse(getBaseUrl('google-login')),
+        headers: <String, String>{
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+        body: jsonEncode({
+          'idToken': idToken,
+        }),
       );
 
       if (response.statusCode == 200) {
-        final responseData = json.decode(response.body);
-        // Handle successful Google sign-in response
-        print('Google sign-in successful: $responseData');
+        // Successful login
+        Map<String, dynamic> responseData = jsonDecode(response.body);
+        String token = responseData['token'];
+        String userId = responseData['userId'];
+
+        print('Token received: $token'); // Check if the token is received
+
+        // Save the token and userId to the UserProvider
+        Provider.of<UserProvider>(context, listen: false).login(token, userId);
+
+        // Navigate to the home screen
+        Navigator.pushReplacementNamed(context, '/home');
       } else {
-        throw Exception('Failed to sign in with Google');
+        // Display a SnackBar if login fails
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Login with Google failed. Please try again.'),
+            backgroundColor: Colors.red,
+          ),
+        );
       }
     } catch (e) {
       print('Error during Google sign-in: $e');
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          content: Text(
-              'An error occurred during Google sign-in. Please try again.'),
+          content:
+              Text('An error occurred during Google sign-in. Network error!'),
           backgroundColor: Colors.red,
         ),
       );

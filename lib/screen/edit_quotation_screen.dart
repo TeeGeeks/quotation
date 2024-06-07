@@ -4,11 +4,11 @@ import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'dart:convert';
 
-import 'package:quotation_app/base_url.dart';
-import 'package:quotation_app/quotations.dart';
-import 'package:quotation_app/widgets/edit_quotation_form.dart';
-import 'package:quotation_app/widgets/main_drawer.dart';
-import 'package:quotation_app/widgets/user_profile.dart';
+import '../base_url.dart';
+import '../quotations.dart';
+import '../widgets/edit_quotation_form.dart';
+import '../widgets/main_drawer.dart';
+import '../widgets/user_profile.dart';
 
 class EditScreen extends StatefulWidget {
   @override

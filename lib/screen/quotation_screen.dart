@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:quotation_app/widgets/create_quotation.dart';
-import 'package:quotation_app/widgets/main_drawer.dart';
+import '../widgets/create_quotation.dart';
+import '../widgets/main_drawer.dart';
 
 class QuotationScreen extends StatelessWidget {
   const QuotationScreen({Key? key}) : super(key: key);

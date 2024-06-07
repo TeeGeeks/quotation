@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:quotation_app/base_url.dart';
+import '../base_url.dart';
 
 class ResetPasswordPage extends StatefulWidget {
   final String email;
@@ -37,7 +37,7 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
     try {
       var response = await http.post(
         Uri.parse(getBaseUrl('reset-password')),
-         headers: <String, String>{
+        headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
         },
         body: jsonEncode({

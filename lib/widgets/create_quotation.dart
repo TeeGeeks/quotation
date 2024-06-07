@@ -1,14 +1,12 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:quotation_app/base_url.dart';
-import 'package:quotation_app/dummy_data.dart';
+import '../base_url.dart';
+import '../dummy_data.dart';
 import './user_profile.dart';
 import './custom_textform_field.dart';
 import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
-import 'package:fluttertoast/fluttertoast.dart';
-import 'package:flutter/services.dart';
 
 class QuotationForm extends StatefulWidget {
   const QuotationForm({Key? key}) : super(key: key);

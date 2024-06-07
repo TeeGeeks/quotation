@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
-import 'package:quotation_app/base_url.dart';
-import 'package:quotation_app/get_user.dart';
-import 'package:quotation_app/screen/categories_screen.dart';
-import 'package:quotation_app/screen/quotation_screen.dart';
-import 'package:quotation_app/widgets/main_drawer.dart';
-import 'package:quotation_app/widgets/price_settings.dart';
-import 'package:quotation_app/widgets/user_profile.dart';
+import '../base_url.dart';
+import '../get_user.dart';
+import './categories_screen.dart';
+import './quotation_screen.dart';
+import '../widgets/main_drawer.dart';
+import '../widgets/price_settings.dart';
+import '../widgets/user_profile.dart';
 
 class TabsScreen extends StatefulWidget {
   @override

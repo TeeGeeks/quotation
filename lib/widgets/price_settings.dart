@@ -1,12 +1,11 @@
 import 'dart:convert';
-import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
-import 'package:quotation_app/base_url.dart';
-import 'package:quotation_app/widgets/main_drawer.dart';
-import 'package:quotation_app/widgets/user_profile.dart';
+import '../base_url.dart';
+import './main_drawer.dart';
+import './user_profile.dart';
 
 class PriceSettings extends StatefulWidget {
   @override
@@ -75,7 +74,8 @@ class _PriceSettingsState extends State<PriceSettings> {
               'Failed to fetch prices: Unexpected response format', Colors.red);
         }
       } else {
-        _showSnackBar('Failed to fetch prices, Price fields empty!', Colors.red);
+        _showSnackBar(
+            'Failed to fetch prices, Price fields empty!', Colors.red);
       }
     } catch (e) {
       _showSnackBar('Failed to fetch prices', Colors.red);

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quotation_app/widgets/main_drawer.dart';
+import './main_drawer.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class AboutPage extends StatelessWidget {

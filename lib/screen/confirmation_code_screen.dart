@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
-import 'package:quotation_app/base_url.dart';
-import 'package:quotation_app/screen/reset_pass.dart';
+import '../base_url.dart';
+import './reset_pass.dart';
 
 class ConfirmationCodePage extends StatefulWidget {
   final String email;

@@ -1,6 +1,5 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:quotation_app/get_user.dart';
+import '../get_user.dart';
 import 'package:file_picker/file_picker.dart';
 import 'dart:io';
 

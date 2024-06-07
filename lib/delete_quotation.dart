@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
-import 'package:quotation_app/base_url.dart';
+import './base_url.dart';
 import 'dart:convert';
 
-import 'package:quotation_app/quotations.dart';
-import 'package:quotation_app/widgets/main_drawer.dart';
-import 'package:quotation_app/widgets/user_profile.dart'; // Import your Quotation model
+import './quotations.dart';
+import './widgets/main_drawer.dart';
+import './widgets/user_profile.dart'; // Import your Quotation model
 
 class DeleteScreen extends StatefulWidget {
   @override

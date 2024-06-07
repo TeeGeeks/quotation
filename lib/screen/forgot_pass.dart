@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
-import 'package:quotation_app/base_url.dart';
-import 'package:quotation_app/screen/confirmation_code_screen.dart';
+import '../base_url.dart';
+import './confirmation_code_screen.dart';
 
 class ForgotPasswordPage extends StatefulWidget {
   @override

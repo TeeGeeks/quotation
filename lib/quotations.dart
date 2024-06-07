@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
-import 'package:quotation_app/base_url.dart';
-import 'package:quotation_app/get_price.dart';
-import 'package:quotation_app/get_user.dart';
-import 'package:quotation_app/widgets/main_drawer.dart';
-import 'package:quotation_app/widgets/user_profile.dart';
+import './base_url.dart';
+import './get_price.dart';
+import './get_user.dart';
+import './widgets/main_drawer.dart';
+import './widgets/user_profile.dart';
 import 'dart:convert';
 import './screen/quotation_details_screen.dart';
 

@@ -1,7 +1,5 @@
-// ignore_for_file: constant_identifier_names
 
-import 'package:flutter/material.dart';
-import 'package:quotation_app/model/product.dart';
+import './model/product.dart';
 
 const DUMMY_PRODUCT = [
   Product(

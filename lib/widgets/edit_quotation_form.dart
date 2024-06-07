@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
-import 'package:quotation_app/base_url.dart';
-import 'package:quotation_app/dummy_data.dart';
-import 'package:quotation_app/quotations.dart'; // Import your Quotation model
+import '../base_url.dart';
+import '../dummy_data.dart';
+import '../quotations.dart';
 import 'package:http/http.dart' as http;
-import 'package:quotation_app/widgets/main_drawer.dart';
+import './main_drawer.dart';
 import 'dart:convert';
 
 import 'package:quotation_app/widgets/user_profile.dart';
@@ -89,40 +88,26 @@ class _EditQuotationFormState extends State<EditQuotationForm> {
   @override
   void initState() {
     super.initState();
-    _selectedProductName = widget.quotation.productName ?? '';
-    _categoryTitleController.text = widget.quotation.productTitle ?? '';
-    _selectedSizeOfPaper = widget.quotation.sizeOfPaper ?? '';
-    _selectedPaperColor = widget.quotation.paperColor ?? 'white';
-    _selectedCardSize = widget.quotation.sizeOfCard ?? '';
-    _selectedGrammageOfPaper =
-        widget.quotation.grammageForPaper ?? _grammagesOfPaper.first;
-    _selectedGrammageOfCover =
-        widget.quotation.grammageOfCard ?? _grammagesOfCover.first;
-    _selectedFinishingCosts = widget.quotation.finishingCosts ?? [];
-    _numberOfCopiesController.text =
-        widget.quotation.numberOfCopies?.toString() ?? '';
-    // _numberOfCoverController.text =
-    //     widget.quotation.numberOfCover?.toString() ?? '';
-    _designCostController.text = widget.quotation.designCost?.toString() ?? '';
-    _plateMakingController.text =
-        widget.quotation.plateMakingCost?.toString() ?? '';
-    _runningCostController.text =
-        widget.quotation.runningCost?.toString() ?? '';
-    // _noOfColorTextController.text =
-    //     widget.quotation.noOfColorsText?.toString() ?? '';
-    _noOfPageController.text = widget.quotation.numberOfPages?.toString() ?? '';
-    _addressController.text = widget.quotation.address ?? '';
-    _dateController.text = widget.quotation.date != null
-        ? DateFormat('yyyy-MM-dd').format(widget.quotation.date!)
-        : '';
-    _editingCostController.text =
-        widget.quotation.editingCost?.toString() ?? '';
-    _impressionCostController.text =
-        widget.quotation.impressionCost?.toString() ?? '';
-
-    // Populate color of text and color of cover
-    _selectedColorText = widget.quotation.noOfColorsText ?? '';
-    _selectedColorCover = widget.quotation.numberOfCover ?? '';
+    _selectedProductName = widget.quotation.productName;
+    _categoryTitleController.text = widget.quotation.productTitle;
+    _selectedSizeOfPaper = widget.quotation.sizeOfPaper;
+    _selectedPaperColor = widget.quotation.paperColor;
+    _selectedCardSize = widget.quotation.sizeOfCard;
+    _selectedGrammageOfPaper = widget.quotation.grammageForPaper;
+    _selectedGrammageOfCover = widget.quotation.grammageOfCard;
+    _selectedFinishingCosts = widget.quotation.finishingCosts;
+    _numberOfCopiesController.text = widget.quotation.numberOfCopies.toString();
+    _designCostController.text = widget.quotation.designCost.toString();
+    _plateMakingController.text = widget.quotation.plateMakingCost.toString();
+    _runningCostController.text = widget.quotation.runningCost.toString();
+    _noOfPageController.text = widget.quotation.numberOfPages.toString();
+    _addressController.text = widget.quotation.address;
+    _dateController.text =
+        DateFormat('yyyy-MM-dd').format(widget.quotation.date);
+    _editingCostController.text = widget.quotation.editingCost.toString();
+    _impressionCostController.text = widget.quotation.impressionCost.toString();
+    _selectedColorText = widget.quotation.noOfColorsText;
+    _selectedColorCover = widget.quotation.numberOfCover;
   }
 
   void _updateQuotation() async {

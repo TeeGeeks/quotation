@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:quotation_app/base_url.dart';
+import './base_url.dart';
 
 class AuthService {
   static Future<bool> isTokenExpired(String token) async {

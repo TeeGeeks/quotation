@@ -1,6 +1,6 @@
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-import 'package:quotation_app/base_url.dart';
+import './base_url.dart';
 import 'package:http_parser/http_parser.dart';
 import 'package:mime/mime.dart';
 

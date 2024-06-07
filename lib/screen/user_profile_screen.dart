@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:provider/provider.dart';
-import 'package:quotation_app/get_user.dart'; // Ensure this file contains the necessary UserApi implementation.
-import 'package:quotation_app/widgets/main_drawer.dart';
-import 'package:quotation_app/widgets/user_profile.dart';
+import '../get_user.dart';
+import '../widgets/main_drawer.dart';
+import '../widgets/user_profile.dart';
 
 class UserProfileScreen extends StatefulWidget {
   final String userId;

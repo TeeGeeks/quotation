@@ -1,22 +1,21 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:quotation_app/authService.dart';
-import 'package:quotation_app/delete_quotation.dart';
-import 'package:quotation_app/quotations.dart';
-import 'package:quotation_app/screen/edit_quotation_screen.dart';
-import 'package:quotation_app/screen/forgot_pass.dart';
-import 'package:quotation_app/screen/login_screen.dart';
-import 'package:quotation_app/screen/product_items_screen.dart';
-import 'package:quotation_app/screen/quotation_screen.dart';
-import 'package:quotation_app/screen/register_screen.dart';
-import 'package:quotation_app/screen/reset_pass.dart';
-import 'package:quotation_app/screen/tabs_screen.dart';
-import 'package:quotation_app/widgets/main_drawer.dart';
-import 'package:quotation_app/widgets/price_settings.dart';
-import 'package:quotation_app/widgets/about.dart';
-import 'package:quotation_app/widgets/user_profile.dart';
-import 'package:quotation_app/screen/user_profile_screen.dart';
+import './authService.dart';
+import './delete_quotation.dart';
+import './quotations.dart';
+import './screen/edit_quotation_screen.dart';
+import './screen/forgot_pass.dart';
+import './screen/login_screen.dart';
+import './screen/product_items_screen.dart';
+import './screen/quotation_screen.dart';
+import './screen/register_screen.dart';
+import './screen/tabs_screen.dart';
+import './widgets/main_drawer.dart';
+import './widgets/price_settings.dart';
+import './widgets/about.dart';
+import './widgets/user_profile.dart';
+import './screen/user_profile_screen.dart';
 
 void main() {
   runApp(
