@@ -8,7 +8,11 @@ import '../widgets/user_profile.dart';
 class UserProfileScreen extends StatefulWidget {
   final String userId;
 
+<<<<<<< HEAD
   const UserProfileScreen({super.key, required this.userId});
+=======
+  UserProfileScreen({required this.userId});
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
 
   @override
   State<UserProfileScreen> createState() => _UserProfileScreenState();
@@ -142,7 +146,11 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
       appBar: AppBar(
         title: const Text('Update Profile'),
       ),
+<<<<<<< HEAD
       drawer: const MainDrawer(),
+=======
+      drawer: MainDrawer(),
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
       body: _isLoading
           ? const Center(child: CircularProgressIndicator())
           : Stack(children: [
@@ -317,7 +325,11 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                               }
                             },
                             style: ButtonStyle(
+<<<<<<< HEAD
                               backgroundColor: WidgetStateProperty.all<Color>(
+=======
+                              backgroundColor: MaterialStateProperty.all<Color>(
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
                                 const Color.fromARGB(255, 17, 142, 245),
                               ),
                             ),

@@ -54,7 +54,10 @@ dependencies:
   mime: ^1.0.0
   # permission_handler: ^9.3.0
 
+<<<<<<< HEAD
   http_parser: any
+=======
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
 dev_dependencies:
   flutter_test:
     sdk: flutter

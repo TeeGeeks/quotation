@@ -5,8 +5,11 @@ import '../base_url.dart';
 import './confirmation_code_screen.dart';
 
 class ForgotPasswordPage extends StatefulWidget {
+<<<<<<< HEAD
   const ForgotPasswordPage({super.key});
 
+=======
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
   @override
   State<ForgotPasswordPage> createState() => _ForgotPasswordPageState();
 }
@@ -25,7 +28,11 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
 
     if (email.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
+<<<<<<< HEAD
         const SnackBar(
+=======
+        SnackBar(
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
           content: Text('Please enter your email address'),
           backgroundColor: Colors.red,
         ),
@@ -105,9 +112,15 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
           ),
           Center(
             child: Card(
+<<<<<<< HEAD
               margin: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
+=======
+              margin: EdgeInsets.symmetric(horizontal: 20.0),
+              child: Padding(
+                padding: EdgeInsets.all(16.0),
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -120,13 +133,21 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                       ),
                       textAlign: TextAlign.center,
                     ),
+<<<<<<< HEAD
                     const SizedBox(height: 16.0),
+=======
+                    SizedBox(height: 16.0),
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
                     const Text(
                       'Enter the email address associated with your account and we\'ll send you a confirmation code to reset your password.',
                       style: TextStyle(fontSize: 16.0),
                       textAlign: TextAlign.center,
                     ),
+<<<<<<< HEAD
                     const SizedBox(height: 24.0),
+=======
+                    SizedBox(height: 24.0),
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
                     TextFormField(
                       controller: _emailController,
                       decoration: const InputDecoration(
@@ -142,12 +163,21 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                         return null;
                       },
                     ),
+<<<<<<< HEAD
                     const SizedBox(height: 24.0),
                     ElevatedButton(
                       onPressed: _submit,
                       style: ButtonStyle(
                         backgroundColor: WidgetStateProperty.all<Color>(
                           const Color.fromARGB(255, 17, 142, 245),
+=======
+                    SizedBox(height: 24.0),
+                    ElevatedButton(
+                      onPressed: _submit,
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all<Color>(
+                          Color.fromARGB(255, 17, 142, 245),
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
                         ),
                       ),
                       child: _isLoading

@@ -13,7 +13,11 @@ class QuotationDetailsScreen extends StatelessWidget {
   final User? user; // Add the user parameter
   final String? userLogo; // Add the userLogo parameter
 
+<<<<<<< HEAD
   QuotationDetailsScreen({super.key, 
+=======
+  QuotationDetailsScreen({
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
     required this.quotationData,
     required this.prices,
     this.user, // Initialize the user parameter
@@ -27,9 +31,15 @@ class QuotationDetailsScreen extends StatelessWidget {
     if (prices.isEmpty) {
       return Scaffold(
         appBar: AppBar(
+<<<<<<< HEAD
           title: const Text('Quotation Details'),
         ),
         drawer: const MainDrawer(),
+=======
+          title: Text('Quotation Details'),
+        ),
+        drawer: MainDrawer(),
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
         body: Center(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24.0),
@@ -49,7 +59,11 @@ class QuotationDetailsScreen extends StatelessWidget {
                     Navigator.pushReplacementNamed(context, '/price_settings');
                   },
                   style: ButtonStyle(
+<<<<<<< HEAD
                     backgroundColor: WidgetStateProperty.all<Color>(
+=======
+                    backgroundColor: MaterialStateProperty.all<Color>(
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
                       const Color.fromARGB(255, 17, 142, 245),
                     ),
                   ),
@@ -96,7 +110,11 @@ class QuotationDetailsScreen extends StatelessWidget {
         const SizedBox(height: 20),
         Row(
           children: [
+<<<<<<< HEAD
             SizedBox(
+=======
+            Container(
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
               width: 50,
               height: 50,
               child: SizedBox(
@@ -120,7 +138,11 @@ class QuotationDetailsScreen extends StatelessWidget {
                       ),
               ),
             ),
+<<<<<<< HEAD
             const Spacer(),
+=======
+            Spacer(),
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
             Flexible(
               child: Align(
                 alignment: Alignment.centerLeft,
@@ -371,7 +393,11 @@ class QuotationDetailsScreen extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
             ),
             child: const Padding(
+<<<<<<< HEAD
               padding: EdgeInsets.all(16.0),
+=======
+              padding: const EdgeInsets.all(16.0),
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

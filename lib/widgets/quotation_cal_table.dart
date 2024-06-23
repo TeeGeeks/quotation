@@ -3,8 +3,13 @@ import 'package:flutter/material.dart';
 class SevenColumnTable extends StatelessWidget {
   final List<Map<String, dynamic>> rowData;
 
+<<<<<<< HEAD
   const SevenColumnTable(
       {super.key, required this.rowData, required Map<String, dynamic> quotationData});
+=======
+  SevenColumnTable(
+      {required this.rowData, required Map<String, dynamic> quotationData});
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
 
   Widget buildTable() {
     return Table(

@@ -3,7 +3,11 @@ import '../widgets/create_quotation.dart';
 import '../widgets/main_drawer.dart';
 
 class QuotationScreen extends StatelessWidget {
+<<<<<<< HEAD
   const QuotationScreen({super.key});
+=======
+  const QuotationScreen({Key? key}) : super(key: key);
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +33,11 @@ class QuotationScreen extends StatelessWidget {
         ),
       ),
       drawer: const MainDrawer(),
+<<<<<<< HEAD
       body: const QuotationForm(),
+=======
+      body: QuotationForm(),
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
     );
   }
 }

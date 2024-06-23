@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
 class MainDrawer extends StatelessWidget {
+<<<<<<< HEAD
   const MainDrawer({super.key});
+=======
+  const MainDrawer({Key? key}) : super(key: key);
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
 
   Widget buildListTile(String title, IconData icon, VoidCallback? tapHandler) {
     return ListTile(
@@ -25,7 +29,11 @@ class MainDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
     return SizedBox(
+=======
+    return Container(
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
       width:
           MediaQuery.of(context).size.width * 0.6, // Adjust the width as needed
       child: Drawer(

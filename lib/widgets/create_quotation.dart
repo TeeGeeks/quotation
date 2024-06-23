@@ -9,7 +9,11 @@ import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
 
 class QuotationForm extends StatefulWidget {
+<<<<<<< HEAD
   const QuotationForm({super.key});
+=======
+  const QuotationForm({Key? key}) : super(key: key);
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
 
   @override
   State<QuotationForm> createState() => _QuotationFormState();
@@ -353,7 +357,11 @@ class _QuotationFormState extends State<QuotationForm> {
                         // ),
                         DropdownButtonFormField<String>(
                           value: _selectedColorText,
+<<<<<<< HEAD
                           decoration: const InputDecoration(
+=======
+                          decoration: InputDecoration(
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
                             labelText: 'Colour(s) of text',
                             border: OutlineInputBorder(),
                           ),
@@ -501,7 +509,11 @@ class _QuotationFormState extends State<QuotationForm> {
                         // ),
                         DropdownButtonFormField<String>(
                           value: _selectedColorCover,
+<<<<<<< HEAD
                           decoration: const InputDecoration(
+=======
+                          decoration: InputDecoration(
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
                             labelText: 'Colour(s) of cover',
                             border: OutlineInputBorder(),
                           ),
@@ -672,13 +684,21 @@ class _QuotationFormState extends State<QuotationForm> {
                           ? _submitForm
                           : null,
                   style: ButtonStyle(
+<<<<<<< HEAD
                     backgroundColor: WidgetStateProperty.all<Color>(
+=======
+                    backgroundColor: MaterialStateProperty.all<Color>(
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
                       (_formKey.currentState != null &&
                               _formKey.currentState!.validate())
                           ? Colors.blue
                           : Colors.grey,
                     ),
+<<<<<<< HEAD
                     foregroundColor: WidgetStateProperty.all<Color>(
+=======
+                    foregroundColor: MaterialStateProperty.all<Color>(
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
                       (_formKey.currentState != null &&
                               _formKey.currentState!.validate())
                           ? Colors.white

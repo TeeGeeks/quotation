@@ -119,8 +119,11 @@ class Quotation {
 }
 
 class AllQuotationScreen extends StatefulWidget {
+<<<<<<< HEAD
   const AllQuotationScreen({super.key});
 
+=======
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
   @override
   _AllQuotationScreenState createState() => _AllQuotationScreenState();
 }
@@ -203,9 +206,15 @@ class _AllQuotationScreenState extends State<AllQuotationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+<<<<<<< HEAD
         title: const Text('All Quotations'),
       ),
       drawer: const MainDrawer(),
+=======
+        title: Text('All Quotations'),
+      ),
+      drawer: MainDrawer(),
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
       body: Stack(children: [
         Container(
           decoration: const BoxDecoration(
@@ -223,7 +232,11 @@ class _AllQuotationScreenState extends State<AllQuotationScreen> {
           future: _quotations,
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
+<<<<<<< HEAD
               return const Center(child: CircularProgressIndicator());
+=======
+              return Center(child: CircularProgressIndicator());
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
             } else if (snapshot.hasError) {
               return Center(child: Text('Error: ${snapshot.error}'));
             } else if (snapshot.data!.isEmpty) {
@@ -294,7 +307,11 @@ class _AllQuotationScreenState extends State<AllQuotationScreen> {
                               builder: (context, snapshot) {
                                 if (snapshot.connectionState ==
                                     ConnectionState.waiting) {
+<<<<<<< HEAD
                                   return const Center(
+=======
+                                  return Center(
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
                                       child: CircularProgressIndicator());
                                 } else if (snapshot.hasError) {
                                   return Center(
@@ -320,7 +337,11 @@ class _AllQuotationScreenState extends State<AllQuotationScreen> {
                                           quotation.grammageOfCard,
                                       'Size of Card': quotation.sizeOfCard,
                                       'Finishing': quotation.finishingCosts
+<<<<<<< HEAD
                                               .join(', ') ??
+=======
+                                              ?.join(', ') ??
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
                                           '',
                                       'Graphics Design Cost (₦)':
                                           quotation.designCost,
@@ -333,7 +354,11 @@ class _AllQuotationScreenState extends State<AllQuotationScreen> {
                                           quotation.impressionCost,
                                       'Address': quotation.address,
                                       'Date': quotation.date != null
+<<<<<<< HEAD
                                           ? quotation.date.toString()
+=======
+                                          ? quotation.date!.toString()
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
                                           : '',
                                     },
                                     prices: snapshot.data ?? [],

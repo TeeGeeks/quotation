@@ -7,7 +7,11 @@ class ResetPasswordPage extends StatefulWidget {
   final String email;
   final String code;
 
+<<<<<<< HEAD
   const ResetPasswordPage({super.key, required this.email, required this.code});
+=======
+  ResetPasswordPage({required this.email, required this.code});
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
 
   @override
   _ResetPasswordPageState createState() => _ResetPasswordPageState();
@@ -156,16 +160,28 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                     ElevatedButton(
                       onPressed: () => _resetPassword(context),
                       style: ButtonStyle(
+<<<<<<< HEAD
                         backgroundColor: WidgetStateProperty.all<Color>(
                           const Color.fromARGB(255, 17, 142, 245),
                         ),
                         shape:
                             WidgetStateProperty.all<RoundedRectangleBorder>(
+=======
+                        backgroundColor: MaterialStateProperty.all<Color>(
+                          const Color.fromARGB(255, 17, 142, 245),
+                        ),
+                        shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
                           RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                         ),
+<<<<<<< HEAD
                         padding: WidgetStateProperty.all<EdgeInsets>(
+=======
+                        padding: MaterialStateProperty.all<EdgeInsets>(
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
                           const EdgeInsets.symmetric(vertical: 16.0),
                         ),
                       ),

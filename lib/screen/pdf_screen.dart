@@ -169,7 +169,12 @@ class PdfScreen extends StatefulWidget {
   final String title;
   final List<Widget> content;
 
+<<<<<<< HEAD
   const PdfScreen({super.key, required this.title, required this.content});
+=======
+  const PdfScreen({Key? key, required this.title, required this.content})
+      : super(key: key);
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
 
   @override
   _PdfScreenState createState() => _PdfScreenState();
@@ -188,7 +193,11 @@ class _PdfScreenState extends State<PdfScreen> {
   Future<void> _captureScreenshot() async {
     try {
       // Ensure the widget is rendered before capturing the screenshot
+<<<<<<< HEAD
       await Future.delayed(const Duration(milliseconds: 500));
+=======
+      await Future.delayed(Duration(milliseconds: 500));
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
 
       RenderRepaintBoundary boundary = _globalKey.currentContext!
           .findRenderObject() as RenderRepaintBoundary;
@@ -235,9 +244,15 @@ class _PdfScreenState extends State<PdfScreen> {
       print('File saved to: $path');
 
       ScaffoldMessenger.of(context).showSnackBar(
+<<<<<<< HEAD
         const SnackBar(
           content: Text('PDF saved successfully.'),
           duration: Duration(seconds: 2),
+=======
+        SnackBar(
+          content: const Text('PDF saved successfully.'),
+          duration: const Duration(seconds: 2),
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
         ),
       );
     } catch (error) {
@@ -274,7 +289,11 @@ class _PdfScreenState extends State<PdfScreen> {
                       valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
                     ),
                   )
+<<<<<<< HEAD
                 : const Icon(Icons.save),
+=======
+                : Icon(Icons.save),
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
           ),
         ],
       ),
@@ -282,7 +301,11 @@ class _PdfScreenState extends State<PdfScreen> {
       body: Stack(
         children: [
           Container(
+<<<<<<< HEAD
             decoration: const BoxDecoration(
+=======
+            decoration: BoxDecoration(
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
               image: DecorationImage(
                 image: AssetImage('assets/bg1.jpg'),
                 fit: BoxFit.cover,

@@ -11,6 +11,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SharedPreferences.getInstance();
+<<<<<<< HEAD
   runApp(const LoginApp());
 }
 
@@ -20,6 +21,15 @@ class LoginApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
+=======
+  runApp(LoginApp());
+}
+
+class LoginApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
       title: 'Login App',
       home: LoginPage(),
     );
@@ -27,8 +37,11 @@ class LoginApp extends StatelessWidget {
 }
 
 class LoginPage extends StatefulWidget {
+<<<<<<< HEAD
   const LoginPage({super.key});
 
+=======
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
   @override
   _LoginPageState createState() => _LoginPageState();
 }
@@ -188,11 +201,18 @@ class _LoginPageState extends State<LoginPage> {
     }
   }
 
+<<<<<<< HEAD
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(0.0), // Remove app bar
+=======
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(0.0), // Remove app bar
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
         child: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0,
@@ -211,7 +231,11 @@ class _LoginPageState extends State<LoginPage> {
             ),
             Center(
               child: SingleChildScrollView(
+<<<<<<< HEAD
                 padding: const EdgeInsets.all(16.0),
+=======
+                padding: EdgeInsets.all(16.0),
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
@@ -229,7 +253,11 @@ class _LoginPageState extends State<LoginPage> {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
+<<<<<<< HEAD
                     const SizedBox(height: 24.0),
+=======
+                    SizedBox(height: 24.0),
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
                     TextFormField(
                       controller: _emailController,
                       decoration: InputDecoration(
@@ -237,16 +265,28 @@ class _LoginPageState extends State<LoginPage> {
                         hintText: 'Enter your email',
                         filled: true,
                         fillColor: Colors.white,
+<<<<<<< HEAD
                         prefixIcon: const Icon(Icons.email),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10.0),
                         ),
                         labelStyle: const TextStyle(
+=======
+                        prefixIcon: Icon(Icons.email),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                        labelStyle: TextStyle(
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
                           color: Colors.black54, // Change the color here
                         ),
                       ),
                     ),
+<<<<<<< HEAD
                     const SizedBox(height: 12.0),
+=======
+                    SizedBox(height: 12.0),
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
                     TextFormField(
                       controller: _passwordController,
                       decoration: InputDecoration(
@@ -254,11 +294,19 @@ class _LoginPageState extends State<LoginPage> {
                         hintText: 'Enter your password',
                         filled: true,
                         fillColor: Colors.white,
+<<<<<<< HEAD
                         prefixIcon: const Icon(Icons.lock),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10.0),
                         ),
                         labelStyle: const TextStyle(
+=======
+                        prefixIcon: Icon(Icons.lock),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                        labelStyle: TextStyle(
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
                           color: Colors.black54, // Change the color here
                         ),
                       ),
@@ -275,9 +323,15 @@ class _LoginPageState extends State<LoginPage> {
                           },
                           activeColor: Colors.blue, // Border color when checked
                           checkColor: Colors.white, // Check color when checked
+<<<<<<< HEAD
                           fillColor: WidgetStateProperty.resolveWith<Color>(
                               (states) {
                             if (states.contains(WidgetState.selected)) {
+=======
+                          fillColor: MaterialStateProperty.resolveWith<Color>(
+                              (states) {
+                            if (states.contains(MaterialState.selected)) {
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
                               return Colors
                                   .blue; // Background color when checked
                             }
@@ -307,19 +361,34 @@ class _LoginPageState extends State<LoginPage> {
                     ElevatedButton(
                       onPressed: _submit,
                       style: ButtonStyle(
+<<<<<<< HEAD
                         padding: WidgetStateProperty.all<EdgeInsetsGeometry>(
                           const EdgeInsets.symmetric(
                               horizontal: 50, vertical: 12),
                         ),
                         shape: WidgetStateProperty.all<OutlinedBorder>(
+=======
+                        padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+                          const EdgeInsets.symmetric(
+                              horizontal: 50, vertical: 12),
+                        ),
+                        shape: MaterialStateProperty.all<OutlinedBorder>(
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
                           RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                         ),
+<<<<<<< HEAD
                         backgroundColor: WidgetStateProperty.all<Color>(
                           Colors.blue, // Set the background color
                         ),
                         foregroundColor: WidgetStateProperty.all<Color>(
+=======
+                        backgroundColor: MaterialStateProperty.all<Color>(
+                          Colors.blue, // Set the background color
+                        ),
+                        foregroundColor: MaterialStateProperty.all<Color>(
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
                           Colors.white, // Set the text color
                         ),
                       ),

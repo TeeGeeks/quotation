@@ -13,7 +13,12 @@ import 'package:quotation_app/widgets/user_profile.dart';
 class EditQuotationForm extends StatefulWidget {
   final Quotation quotation;
 
+<<<<<<< HEAD
   const EditQuotationForm({super.key, required this.quotation});
+=======
+  const EditQuotationForm({Key? key, required this.quotation})
+      : super(key: key);
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
 
   @override
   _EditQuotationFormState createState() => _EditQuotationFormState();
@@ -189,7 +194,11 @@ class _EditQuotationFormState extends State<EditQuotationForm> {
         appBar: AppBar(
           title: const Text('Edit Quotation'),
         ),
+<<<<<<< HEAD
         drawer: const MainDrawer(),
+=======
+        drawer: MainDrawer(),
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
         body: Stack(children: [
           Container(
             decoration: const BoxDecoration(
@@ -315,7 +324,11 @@ class _EditQuotationFormState extends State<EditQuotationForm> {
                         const SizedBox(height: 12.0),
                         DropdownButtonFormField<String>(
                           value: _selectedColorText,
+<<<<<<< HEAD
                           decoration: const InputDecoration(
+=======
+                          decoration: InputDecoration(
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
                             labelText: 'Colour(s) of text',
                             border: OutlineInputBorder(),
                           ),
@@ -432,7 +445,11 @@ class _EditQuotationFormState extends State<EditQuotationForm> {
                         const SizedBox(height: 12.0),
                         DropdownButtonFormField<String>(
                           value: _selectedColorCover,
+<<<<<<< HEAD
                           decoration: const InputDecoration(
+=======
+                          decoration: InputDecoration(
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
                             labelText: 'Colour(s) of cover',
                             border: OutlineInputBorder(),
                           ),
@@ -615,8 +632,13 @@ class _EditQuotationFormState extends State<EditQuotationForm> {
                                   },
                                 )),
                         if (_finishingCostsSelected == false)
+<<<<<<< HEAD
                           const Padding(
                             padding: EdgeInsets.only(top: 8.0),
+=======
+                          Padding(
+                            padding: const EdgeInsets.only(top: 8.0),
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
                             child: Text(
                               'Please select at least one finishing cost',
                               style: TextStyle(color: Colors.red),
@@ -629,10 +651,17 @@ class _EditQuotationFormState extends State<EditQuotationForm> {
                   ElevatedButton(
                     onPressed: _isLoading ? null : _updateQuotation,
                     style: ButtonStyle(
+<<<<<<< HEAD
                       backgroundColor: WidgetStateProperty.all<Color>(
                         _isLoading ? Colors.grey : Colors.blue,
                       ),
                       foregroundColor: WidgetStateProperty.all<Color>(
+=======
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                        _isLoading ? Colors.grey : Colors.blue,
+                      ),
+                      foregroundColor: MaterialStateProperty.all<Color>(
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
                         _isLoading ? Colors.black : Colors.white,
                       ),
                     ),
@@ -646,7 +675,11 @@ class _EditQuotationFormState extends State<EditQuotationForm> {
                                   AlwaysStoppedAnimation<Color>(Colors.white),
                             ),
                           )
+<<<<<<< HEAD
                         : const Text('Edit'),
+=======
+                        : Text('Edit'),
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
                   )
                 ],
               ),

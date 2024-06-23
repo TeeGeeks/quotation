@@ -10,8 +10,11 @@ import './widgets/main_drawer.dart';
 import './widgets/user_profile.dart'; // Import your Quotation model
 
 class DeleteScreen extends StatefulWidget {
+<<<<<<< HEAD
   const DeleteScreen({super.key});
 
+=======
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
   @override
   _DeleteScreenState createState() => _DeleteScreenState();
 }

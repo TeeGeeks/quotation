@@ -47,21 +47,37 @@ void main() {
         onGenerateRoute: (settings) {
           switch (settings.name) {
             case '/splash':
+<<<<<<< HEAD
               return MaterialPageRoute(builder: (_) => const SplashScreen());
             case '/':
               return MaterialPageRoute(
                   builder: (_) => const Scaffold(
                         drawer: MainDrawer(),
+=======
+              return MaterialPageRoute(builder: (_) => SplashScreen());
+            case '/':
+              return MaterialPageRoute(
+                  builder: (_) => Scaffold(
+                        drawer: const MainDrawer(),
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
                         body: LoginPage(),
                       ));
             case '/register':
               return MaterialPageRoute(
+<<<<<<< HEAD
                   builder: (_) => const Scaffold(
+=======
+                  builder: (_) => Scaffold(
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
                         body: CreateAccountPage(),
                       ));
             case '/forgot_password':
               return MaterialPageRoute(
+<<<<<<< HEAD
                   builder: (_) => const Scaffold(
+=======
+                  builder: (_) => Scaffold(
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
                         body: ForgotPasswordPage(),
                       ));
             case '/home':
@@ -69,12 +85,21 @@ void main() {
                 final userProvider =
                     Provider.of<UserProvider>(context, listen: false);
                 if (userProvider.token != null) {
+<<<<<<< HEAD
                   return const Scaffold(
                     drawer: MainDrawer(),
                     body: TabsScreen(),
                   );
                 } else {
                   return const LoginPage(); // Redirect to login if not authenticated
+=======
+                  return Scaffold(
+                    drawer: const MainDrawer(),
+                    body: TabsScreen(),
+                  );
+                } else {
+                  return LoginPage(); // Redirect to login if not authenticated
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
                 }
               });
             case '/create-quotation':
@@ -87,7 +112,11 @@ void main() {
                     body: QuotationScreen(),
                   );
                 } else {
+<<<<<<< HEAD
                   return const LoginPage(); // Redirect to login if not authenticated
+=======
+                  return LoginPage(); // Redirect to login if not authenticated
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
                 }
               });
             case '/products':
@@ -100,7 +129,11 @@ void main() {
                     body: ProductItemsScreen(),
                   );
                 } else {
+<<<<<<< HEAD
                   return const LoginPage(); // Redirect to login if not authenticated
+=======
+                  return LoginPage(); // Redirect to login if not authenticated
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
                 }
               });
             case '/quotations':
@@ -108,12 +141,21 @@ void main() {
                 final userProvider =
                     Provider.of<UserProvider>(context, listen: false);
                 if (userProvider.token != null) {
+<<<<<<< HEAD
                   return const Scaffold(
                     drawer: MainDrawer(),
                     body: AllQuotationScreen(),
                   );
                 } else {
                   return const LoginPage(); // Redirect to login if not authenticated
+=======
+                  return Scaffold(
+                    drawer: const MainDrawer(),
+                    body: AllQuotationScreen(),
+                  );
+                } else {
+                  return LoginPage(); // Redirect to login if not authenticated
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
                 }
               });
             case '/price_settings':
@@ -121,12 +163,21 @@ void main() {
                 final userProvider =
                     Provider.of<UserProvider>(context, listen: false);
                 if (userProvider.token != null) {
+<<<<<<< HEAD
                   return const Scaffold(
                     drawer: MainDrawer(),
                     body: PriceSettings(),
                   );
                 } else {
                   return const LoginPage(); // Redirect to login if not authenticated
+=======
+                  return Scaffold(
+                    drawer: const MainDrawer(),
+                    body: PriceSettings(),
+                  );
+                } else {
+                  return LoginPage(); // Redirect to login if not authenticated
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
                 }
               });
             case '/delete_quotation':
@@ -134,12 +185,21 @@ void main() {
                 final userProvider =
                     Provider.of<UserProvider>(context, listen: false);
                 if (userProvider.token != null) {
+<<<<<<< HEAD
                   return const Scaffold(
                     drawer: MainDrawer(),
                     body: DeleteScreen(),
                   );
                 } else {
                   return const LoginPage(); // Redirect to login if not authenticated
+=======
+                  return Scaffold(
+                    drawer: const MainDrawer(),
+                    body: DeleteScreen(),
+                  );
+                } else {
+                  return LoginPage(); // Redirect to login if not authenticated
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
                 }
               });
             case '/edit_quotation':
@@ -147,12 +207,21 @@ void main() {
                 final userProvider =
                     Provider.of<UserProvider>(context, listen: false);
                 if (userProvider.token != null) {
+<<<<<<< HEAD
                   return const Scaffold(
                     drawer: MainDrawer(),
                     body: EditScreen(),
                   );
                 } else {
                   return const LoginPage(); // Redirect to login if not authenticated
+=======
+                  return Scaffold(
+                    drawer: const MainDrawer(),
+                    body: EditScreen(),
+                  );
+                } else {
+                  return LoginPage(); // Redirect to login if not authenticated
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
                 }
               });
             case '/profile':
@@ -167,7 +236,11 @@ void main() {
                     ),
                   );
                 } else {
+<<<<<<< HEAD
                   return const LoginPage(); // Redirect to login if not authenticated
+=======
+                  return LoginPage(); // Redirect to login if not authenticated
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
                 }
               });
                case '/about-us':
@@ -175,12 +248,21 @@ void main() {
                 final userProvider =
                     Provider.of<UserProvider>(context, listen: false);
                 if (userProvider.token != null) {
+<<<<<<< HEAD
                   return const Scaffold(
                     drawer: MainDrawer(),
                     body: AboutPage(),
                   );
                 } else {
                   return const LoginPage(); // Redirect to login if not authenticated
+=======
+                  return Scaffold(
+                    drawer: const MainDrawer(),
+                    body: AboutPage(),
+                  );
+                } else {
+                  return LoginPage(); // Redirect to login if not authenticated
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
                 }
               });
             default:
@@ -198,8 +280,11 @@ void main() {
 }
 
 class SplashScreen extends StatefulWidget {
+<<<<<<< HEAD
   const SplashScreen({super.key});
 
+=======
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
   @override
   _SplashScreenState createState() => _SplashScreenState();
 }
@@ -214,7 +299,11 @@ class _SplashScreenState extends State<SplashScreen>
     super.initState();
 
     _animationController =
+<<<<<<< HEAD
         AnimationController(vsync: this, duration: const Duration(seconds: 2));
+=======
+        AnimationController(vsync: this, duration: Duration(seconds: 2));
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
     _animation = Tween<double>(begin: 0, end: 1).animate(_animationController);
 
     _animationController.forward();

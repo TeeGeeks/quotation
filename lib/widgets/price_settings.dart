@@ -8,8 +8,11 @@ import './main_drawer.dart';
 import './user_profile.dart';
 
 class PriceSettings extends StatefulWidget {
+<<<<<<< HEAD
   const PriceSettings({super.key});
 
+=======
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
   @override
   _PriceSettingsState createState() => _PriceSettingsState();
 }
@@ -117,9 +120,14 @@ class _PriceSettingsState extends State<PriceSettings> {
     if (index != -1) return index + _finishingCostOptions.length;
 
     index = _grammagesOfCover.indexOf(int.tryParse(name) ?? -1);
+<<<<<<< HEAD
     if (index != -1) {
       return index + _finishingCostOptions.length + _grammagesOfPaper.length;
     }
+=======
+    if (index != -1)
+      return index + _finishingCostOptions.length + _grammagesOfPaper.length;
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
 
     index = _printingColor.indexWhere((color) => color['name'] == name);
     if (index != -1) {
@@ -224,12 +232,20 @@ class _PriceSettingsState extends State<PriceSettings> {
         if (response.statusCode == 201) {
           _formKey.currentState!.reset();
           _scaffoldMessengerState?.showSnackBar(
+<<<<<<< HEAD
             const SnackBar(
+=======
+            SnackBar(
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
               content: Text('Prices saved successfully'),
               backgroundColor: Colors.green,
             ),
           );
+<<<<<<< HEAD
           Future.delayed(const Duration(seconds: 5), () {
+=======
+          Future.delayed(Duration(seconds: 5), () {
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
             Navigator.pushReplacementNamed(context, '/home');
           });
         } else {
@@ -242,7 +258,11 @@ class _PriceSettingsState extends State<PriceSettings> {
         }
       } catch (e) {
         _scaffoldMessengerState?.showSnackBar(
+<<<<<<< HEAD
           const SnackBar(
+=======
+          SnackBar(
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
               content:
                   Text('Failed to save prices; all fields must be filled!')),
         );
@@ -259,9 +279,15 @@ class _PriceSettingsState extends State<PriceSettings> {
     _scaffoldMessengerState = ScaffoldMessenger.of(context);
     return Scaffold(
         appBar: AppBar(
+<<<<<<< HEAD
           title: const Text('Price Settings'),
         ),
         drawer: const MainDrawer(),
+=======
+          title: Text('Price Settings'),
+        ),
+        drawer: MainDrawer(),
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
         body: Stack(children: [
           Container(
             decoration: const BoxDecoration(
@@ -318,11 +344,19 @@ class _PriceSettingsState extends State<PriceSettings> {
                         _printingColor.length,
                     _controllers,
                   ),
+<<<<<<< HEAD
                   const SizedBox(height: 20),
                   ElevatedButton(
                     onPressed: _submitForm,
                     style: ButtonStyle(
                       backgroundColor: WidgetStateProperty.all<Color>(
+=======
+                  SizedBox(height: 20),
+                  ElevatedButton(
+                    onPressed: _submitForm,
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
                         const Color.fromARGB(255, 17, 142, 245),
                       ),
                     ),
@@ -353,7 +387,11 @@ class _PriceSettingsState extends State<PriceSettings> {
     List<dynamic> items,
     int startIndex,
     List<TextEditingController>
+<<<<<<< HEAD
         controllers, // Add this line to include controllers list
+=======
+        _controllers, // Add this line to include controllers list
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
   ) {
     return Card(
       child: Padding(
@@ -371,12 +409,20 @@ class _PriceSettingsState extends State<PriceSettings> {
                 ),
               ),
             ),
+<<<<<<< HEAD
             const Divider(),
+=======
+            Divider(),
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
             for (int i = 0; i < items.length; i++)
               buildPriceField(
                 'Price for ${items[i]} ($categoryName)'
                     .toUpperCase(), // Convert label to uppercase
+<<<<<<< HEAD
                 controllers[startIndex + i],
+=======
+                _controllers[startIndex + i],
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
               ),
           ],
         ),
@@ -392,8 +438,13 @@ class _PriceSettingsState extends State<PriceSettings> {
         decoration: InputDecoration(
           labelText: label,
           prefixText: '₦ ', // Add the naira symbol as a prefix
+<<<<<<< HEAD
           border: const OutlineInputBorder(),
           contentPadding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+=======
+          border: OutlineInputBorder(),
+          contentPadding: EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
         ),
         keyboardType: TextInputType.number,
         inputFormatters: [
@@ -411,16 +462,24 @@ class _PriceSettingsState extends State<PriceSettings> {
 
   @override
   void dispose() {
+<<<<<<< HEAD
     for (var controller in _controllers) {
       controller.dispose();
     }
+=======
+    _controllers.forEach((controller) => controller.dispose());
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
     super.dispose();
   }
 }
 
 void main() {
   runApp(
+<<<<<<< HEAD
     const MaterialApp(
+=======
+    MaterialApp(
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
       debugShowCheckedModeBanner: false,
       home: PriceSettings(),
     ),

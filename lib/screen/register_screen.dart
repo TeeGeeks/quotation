@@ -4,8 +4,11 @@ import 'package:file_picker/file_picker.dart';
 import 'dart:io';
 
 class CreateAccountPage extends StatefulWidget {
+<<<<<<< HEAD
   const CreateAccountPage({super.key});
 
+=======
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
   @override
   _CreateAccountPageState createState() => _CreateAccountPageState();
 }
@@ -237,7 +240,11 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                           }
                         },
                         style: ButtonStyle(
+<<<<<<< HEAD
                           backgroundColor: WidgetStateProperty.all<Color>(
+=======
+                          backgroundColor: MaterialStateProperty.all<Color>(
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
                             const Color.fromARGB(255, 17, 142, 245),
                           ),
                         ),
@@ -284,9 +291,15 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                   children: [
                     TextSpan(
                       text: labelText,
+<<<<<<< HEAD
                       style: const TextStyle(color: Colors.black),
                     ),
                     const TextSpan(
+=======
+                      style: TextStyle(color: Colors.black),
+                    ),
+                    TextSpan(
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
                       text: ' *',
                       style: TextStyle(color: Colors.red),
                     ),
@@ -294,7 +307,11 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                 ),
               )
             : Text(labelText),
+<<<<<<< HEAD
         border: const OutlineInputBorder(),
+=======
+        border: OutlineInputBorder(),
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
       ),
       keyboardType: keyboardType,
       obscureText: obscureText,
@@ -307,6 +324,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
       controller: _fileController,
       decoration: InputDecoration(
         label: RichText(
+<<<<<<< HEAD
           text: const TextSpan(
             children: [
               TextSpan(
@@ -314,15 +332,30 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                 style: TextStyle(color: Colors.black),
               ),
               TextSpan(
+=======
+          text: TextSpan(
+            children: [
+              const TextSpan(
+                text: 'Select Logo',
+                style: TextStyle(color: Colors.black),
+              ),
+              const TextSpan(
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
                 text: ' *',
                 style: TextStyle(color: Colors.red),
               ),
             ],
           ),
         ),
+<<<<<<< HEAD
         border: const OutlineInputBorder(),
         suffixIcon: IconButton(
           icon: const Icon(Icons.attach_file),
+=======
+        border: OutlineInputBorder(),
+        suffixIcon: IconButton(
+          icon: Icon(Icons.attach_file),
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
           onPressed: () async {
             FilePickerResult? result = await FilePicker.platform.pickFiles();
             if (result != null) {

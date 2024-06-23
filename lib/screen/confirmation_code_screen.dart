@@ -7,7 +7,11 @@ import './reset_pass.dart';
 class ConfirmationCodePage extends StatefulWidget {
   final String email;
 
+<<<<<<< HEAD
   const ConfirmationCodePage({super.key, required this.email});
+=======
+  ConfirmationCodePage({required this.email});
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
 
   @override
   State<ConfirmationCodePage> createState() => _ConfirmationCodePageState();
@@ -27,7 +31,11 @@ class _ConfirmationCodePageState extends State<ConfirmationCodePage> {
 
     if (code.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
+<<<<<<< HEAD
         const SnackBar(
+=======
+        SnackBar(
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
           content: Text('Please enter the confirmation code'),
           backgroundColor: Colors.red,
         ),
@@ -101,9 +109,15 @@ class _ConfirmationCodePageState extends State<ConfirmationCodePage> {
           ),
           Center(
             child: Card(
+<<<<<<< HEAD
               margin: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
+=======
+              margin: EdgeInsets.symmetric(horizontal: 20.0),
+              child: Padding(
+                padding: EdgeInsets.all(16.0),
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -116,13 +130,21 @@ class _ConfirmationCodePageState extends State<ConfirmationCodePage> {
                       ),
                       textAlign: TextAlign.center,
                     ),
+<<<<<<< HEAD
                     const SizedBox(height: 16.0),
+=======
+                    SizedBox(height: 16.0),
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
                     const Text(
                       'Please check your email for the confirmation code we sent you.',
                       style: TextStyle(fontSize: 16.0),
                       textAlign: TextAlign.center,
                     ),
+<<<<<<< HEAD
                     const SizedBox(height: 24.0),
+=======
+                    SizedBox(height: 24.0),
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
                     TextFormField(
                       controller: _codeController,
                       decoration: const InputDecoration(
@@ -131,12 +153,21 @@ class _ConfirmationCodePageState extends State<ConfirmationCodePage> {
                       ),
                       keyboardType: TextInputType.number,
                     ),
+<<<<<<< HEAD
                     const SizedBox(height: 24.0),
                     ElevatedButton(
                       onPressed: _verifyCode,
                       style: ButtonStyle(
                         backgroundColor: WidgetStateProperty.all<Color>(
                           const Color.fromARGB(255, 17, 142, 245),
+=======
+                    SizedBox(height: 24.0),
+                    ElevatedButton(
+                      onPressed: _verifyCode,
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all<Color>(
+                          Color.fromARGB(255, 17, 142, 245),
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
                         ),
                       ),
                       child: _isLoading

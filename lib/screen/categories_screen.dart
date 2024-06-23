@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
 class CategoriesScreen extends StatelessWidget {
+<<<<<<< HEAD
   const CategoriesScreen({super.key});
+=======
+  const CategoriesScreen({Key? key}) : super(key: key);
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
 
   Widget _buildDashboardTile(BuildContext context, String title, IconData icon,
       Color color, String routeName) {

@@ -5,7 +5,11 @@ import '../widgets/main_drawer.dart';
 import '../widgets/product_item.dart';
 
 class ProductItemsScreen extends StatelessWidget {
+<<<<<<< HEAD
   const ProductItemsScreen({super.key});
+=======
+  const ProductItemsScreen({Key? key}) : super(key: key);
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
 
   @override
   Widget build(BuildContext context) {

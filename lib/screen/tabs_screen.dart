@@ -10,8 +10,11 @@ import '../widgets/price_settings.dart';
 import '../widgets/user_profile.dart';
 
 class TabsScreen extends StatefulWidget {
+<<<<<<< HEAD
   const TabsScreen({super.key});
 
+=======
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
   @override
   State<TabsScreen> createState() => _TabsScreenState();
 }
@@ -20,7 +23,11 @@ class _TabsScreenState extends State<TabsScreen> {
   late List<Map<String, Object>> _pages;
   String _userLogo = '';
 
+<<<<<<< HEAD
   final int _selectedPageIndex = 0;
+=======
+  int _selectedPageIndex = 0;
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
 
   @override
   void initState() {
@@ -29,7 +36,11 @@ class _TabsScreenState extends State<TabsScreen> {
     _pages = [
       {'page': const CategoriesScreen(), 'title': 'Categories'},
       {'page': const QuotationScreen(), 'title': 'Quotations'},
+<<<<<<< HEAD
       {'page': const PriceSettings(), 'title': 'Price Settings'},
+=======
+      {'page': PriceSettings(), 'title': 'Price Settings'},
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
     ];
   }
 
@@ -104,14 +115,22 @@ class _TabsScreenState extends State<TabsScreen> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
+<<<<<<< HEAD
           title: const Text('Error'),
+=======
+          title: Text('Error'),
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
           content: Text(message),
           actions: <Widget>[
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop();
               },
+<<<<<<< HEAD
               child: const Text('OK'),
+=======
+              child: Text('OK'),
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
             ),
           ],
         );
@@ -124,14 +143,23 @@ class _TabsScreenState extends State<TabsScreen> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
+<<<<<<< HEAD
           title: const Text('Confirm Logout'),
           content: const Text('Are you sure you want to logout?'),
+=======
+          title: Text('Confirm Logout'),
+          content: Text('Are you sure you want to logout?'),
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
           actions: [
             TextButton(
               onPressed: () {
                 Navigator.pop(context); // Close the dialog
               },
+<<<<<<< HEAD
               child: const Text('Cancel'),
+=======
+              child: Text('Cancel'),
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
             ),
             TextButton(
               onPressed: () async {
@@ -181,7 +209,11 @@ class _TabsScreenState extends State<TabsScreen> {
                   );
                 }
               },
+<<<<<<< HEAD
               child: const Text('Logout'),
+=======
+              child: Text('Logout'),
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
             ),
           ],
         );

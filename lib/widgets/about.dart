@@ -3,14 +3,21 @@ import './main_drawer.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class AboutPage extends StatelessWidget {
+<<<<<<< HEAD
   const AboutPage({super.key});
 
+=======
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('About'),
+<<<<<<< HEAD
         backgroundColor: const Color.fromARGB(255, 23, 105, 172),
+=======
+        backgroundColor: Color.fromARGB(255, 23, 105, 172),
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
       ),
       drawer: const MainDrawer(),
       body: SingleChildScrollView(
@@ -124,7 +131,11 @@ class AboutPage extends StatelessWidget {
                   const SizedBox(width: 20),
                   IconButton(
                       // Use the FaIcon Widget + FontAwesomeIcons class for the IconData
+<<<<<<< HEAD
                       icon: const FaIcon(FontAwesomeIcons.gamepad),
+=======
+                      icon: FaIcon(FontAwesomeIcons.gamepad),
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
                       onPressed: () {
                         print("Pressed");
                       })
@@ -139,12 +150,19 @@ class AboutPage extends StatelessWidget {
 }
 
 void main() {
+<<<<<<< HEAD
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
+=======
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -152,7 +170,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+<<<<<<< HEAD
       home: const AboutPage(),
+=======
+      home: AboutPage(),
+>>>>>>> 9e121ec21b8d23bed6153051a36251918372cd4e
     );
   }
 }
