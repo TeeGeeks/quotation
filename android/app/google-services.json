@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "261778414297",
+    "project_id": "quotationapp-d9ee0",
+    "storage_bucket": "quotationapp-d9ee0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:261778414297:android:9cab0b7a496684854a3cc8",
+        "android_client_info": {
+          "package_name": "com.quotation1_id"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXR8LmB6qeN6mJJx5sL-6yEQvf0d00ftI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
